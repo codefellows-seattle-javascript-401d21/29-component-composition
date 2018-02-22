@@ -3,6 +3,9 @@ import React from 'react';
 import NoteCreateForm from '../note-create-form/index';
 import NoteList from '../note-list/index';
 import uuidv1 from 'uuid/v1';
+import Modal from '../modal/index';
+
+import NoteUpdateForm from '../note-update-form/index';
 
 
 class Dashboard extends React.Component{
@@ -10,6 +13,7 @@ class Dashboard extends React.Component{
     super(props);
     this.state = {
       notes: [],
+      display: false,
     };
     let memberFunctions = Object.getOwnPropertyNames(Dashboard.prototype);
     for(let functionName of memberFunctions){
@@ -60,6 +64,7 @@ class Dashboard extends React.Component{
         <h1>Dashboard</h1>
         <NoteCreateForm handleAddNote={this.handleAddNote}/>
         <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} handleUpdateNote={this.handleUpdateNote}/>
+        {/* {renderIf(this.state.display === true < 0 , <NoteUpdateForm/>)} */}
       </div>
     );
 

@@ -14,11 +14,6 @@ class NoteUpdateForm extends React.Component{
   handleSubmit(event){
     event.preventDefault();
     this.props.handleUpdateNote(this.state);
-
-    // this.setState({
-    //   title : '',
-    //   content : '',
-    // });
   }
 
   handleChange(event){
@@ -29,15 +24,15 @@ class NoteUpdateForm extends React.Component{
     });
   }
 
-  componentWillMount() {
-    this.setState({
-      title: this.props.note.title,
-      content: this.props.note.content,
-      id: this.props.note.id,
-      editing: this.props.editing,
-    });
+//   componentWillMount() {
+//     this.setState({
+//       title: this.props.note.title,
+//       content: this.props.note.content,
+//       id: this.props.note.id,
+//       editing: this.props.editing,
+//     });
 
-  }
+//   }
 
   render(){
     return(
