@@ -1,4 +1,5 @@
 import React from 'react';
+import NoteUpdateForm from '../note-update-form';
 
 class NoteItem extends React.Component{
   constructor(props){
@@ -13,11 +14,14 @@ class NoteItem extends React.Component{
 
   render(){
     return(
-      <li>
-        <h2>{this.props.title}</h2>
-        <p>{this.props.content}</p>
-        <button type='submit' onClick={this.handleClick}> delete </button>
-      </li>
+      <div>
+        <li>
+          <h2>{this.props.title}</h2>
+          <p>{this.props.content}</p>
+          <button type='submit' onClick={this.handleClick}> delete </button>
+        </li>
+        <NoteUpdateForm note={this.props.note} handleUpdateNote={this.props.handleUpdateNote}/>
+      </div>
     );
   }
 }

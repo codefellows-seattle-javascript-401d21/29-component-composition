@@ -17,6 +17,7 @@ class Dashboard extends React.Component{
         this[functionName] = this[functionName].bind(this);
       }
     }
+    this.getOrSetState = this.getOrSetState.bind(this);
   }
   handleAddNote(note){
     note.editing = false;
@@ -34,13 +35,31 @@ class Dashboard extends React.Component{
     this.setState({notes: notes});
   }
 
-  
+  handleUpdateNote(note){
+    console.log(note);
+    let notes = this.state.notes;
+    notes.forEach(i => {
+      if(i.id === note.id) {
+        i.title = note.title;
+        i.content = note.content;
+        i.editing = true;
+      }
+    });
+    this.setState({notes: notes});
+  }
+
+  getOrSetState() {
+    return {
+      state: this.state,
+      setState: this.setState.bind(this),
+    };
+  }
   render(){
     return(
       <div>
         <h1>Dashboard</h1>
         <NoteCreateForm handleAddNote={this.handleAddNote}/>
-        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote}/>
+        <NoteList notes={this.state.notes} handleRemoveNote={this.handleRemoveNote} handleUpdateNote={this.handleUpdateNote}/>
       </div>
     );
 
