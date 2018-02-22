@@ -10,6 +10,7 @@ class NoteItem extends React.Component{
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChangeState = this.handleChangeState.bind(this);
+    this.getOrSetState = this.getOrSetState.bind(this);
   }
 
   handleClick(event){
@@ -21,6 +22,13 @@ class NoteItem extends React.Component{
     this.setState({display:true});
   }
 
+  getOrSetState() {
+    return {
+      state: this.state,
+      setState: this.setState.bind(this),
+    };
+  }
+
   render(){
     return(
       <div onDoubleClick={this.handleChangeState}>
@@ -29,7 +37,7 @@ class NoteItem extends React.Component{
           <p>{this.props.content}</p>
           <button type='submit' onClick={this.handleClick}> delete </button>
         </li>
-        {renderIf(this.state.display, <NoteUpdateForm note={this.props.note} handleUpdateNote={this.props.handleUpdateNote}/>)}
+        {renderIf(this.state.display, <NoteUpdateForm note={this.props.note} handleUpdateNote={this.props.handleUpdateNote} getOrSetState={this.getOrSetState()}/>)}
       </div>
     );
   }

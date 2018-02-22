@@ -9,11 +9,13 @@ class NoteUpdateForm extends React.Component{
     };
     this.handleChange= this.handleChange.bind(this);
     this.handleSubmit= this.handleSubmit.bind(this);
+    this.handleClear= this.handleClear.bind(this);
   }
 
   handleSubmit(event){
     event.preventDefault();
     this.props.handleUpdateNote(this.state);
+    this.handleClear();
   }
 
   handleChange(event){
@@ -24,20 +26,23 @@ class NoteUpdateForm extends React.Component{
     });
   }
 
-//   componentWillMount() {
-//     this.setState({
-//       title: this.props.note.title,
-//       content: this.props.note.content,
-//       id: this.props.note.id,
-//       editing: this.props.editing,
-//     });
+  componentWillMount() {
+    this.setState({
+      title: this.props.note.title,
+      content: this.props.note.content,
+      id: this.props.note.id,
+      editing: this.props.editing,
+    });
 
-//   }
-
+  }
+  handleClear() {
+    this.props.getOrSetState.setState({display:false});
+  }
   render(){
     return(
       <form className='note-update-form' onSubmit={this.handleSubmit}>
         <input
+          className='title-update-input'
           type='text'
           name='title'
           placeholder='title'
@@ -53,6 +58,7 @@ class NoteUpdateForm extends React.Component{
           onChange={this.handleChange}  
         />
         <button type='submit'> update note </button>
+        <button type='button' onClick={this.handleClear}> cancel </button>
       </form>
     );
   }

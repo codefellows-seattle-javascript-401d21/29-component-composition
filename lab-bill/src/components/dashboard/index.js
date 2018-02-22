@@ -13,7 +13,6 @@ class Dashboard extends React.Component{
     super(props);
     this.state = {
       notes: [],
-      display: false,
     };
     let memberFunctions = Object.getOwnPropertyNames(Dashboard.prototype);
     for(let functionName of memberFunctions){
