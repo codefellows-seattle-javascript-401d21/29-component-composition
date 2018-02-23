@@ -17,10 +17,4 @@ describe('NoteForm component', () => {
     expect(mountedNoteForm.state('content')).toEqual('');
   });
 
-/*  test('should set state', () => {
-    const wrapper = mount(
-      <NoteForm />
-    ));
-  });
-*/
 });

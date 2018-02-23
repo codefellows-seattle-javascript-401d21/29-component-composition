@@ -31,7 +31,6 @@ class Dashboard extends React.Component{
     this.setState(previousState => {
       for(let i = 0; i < previousState.notes.length; i++){
         if(previousState.notes[i].id === note.id){
-          console.log(note);
           previousState.notes[i] = note;
         }
       }
