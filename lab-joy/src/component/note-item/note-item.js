@@ -5,7 +5,6 @@ class NoteItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = { note: this.props.note };
-    console.log(this.state.note.editing);
 
     let memberFunctions = Object.getOwnPropertyNames(NoteItem.prototype);
     for (let functionName of memberFunctions) {
@@ -19,9 +18,9 @@ class NoteItem extends React.Component {
     return test ? component: undefined; 
   }
 
-  toggleEditing() {
-    this.setState({ 
-      note.editing: !this.state.note.editing, 
+  handleToggle() {
+    this.setState(() => {
+      return this.state.note.editing = !this.state.note.editing;
     });
   }
 
@@ -29,8 +28,8 @@ class NoteItem extends React.Component {
     return (
       <div>
         <li>[<a id={this.props.note.id} onClick={this.props.remove}>&times;</a>] {this.props.note.title}: 
-        <a onDoubleClick={this.toggleEditing}>{this.props.note.content}</a></li>
-        {this.renderIf(this.state.editing, <NoteUpdate note={this.props.note} />) };
+        <a onDoubleClick={this.handleToggle}>{this.props.note.content}</a></li>
+        {this.renderIf(this.state.note.editing, <NoteUpdate note={this.props.note} />) }
       </div>
     );
 
