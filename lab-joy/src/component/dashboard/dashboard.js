@@ -43,7 +43,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <h1>Dashboard</h1>
+        <h1>To Do Notes: Dashboard</h1>
         <NoteForm handleAddNote={this.handleAddNote} />
         <NoteList notes={this.state.notes} remove={this.handleRemoveNote} handleUpdateNote={this.handleUpdateNote} />
       </div>

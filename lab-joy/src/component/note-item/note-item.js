@@ -27,7 +27,8 @@ class NoteItem extends React.Component {
   render() {
     return (
       <div>
-        <li>[<a id={this.props.note.id} onClick={this.props.remove}>&times;</a>] {this.props.note.title}: 
+        <li>[<a id={this.props.note.id} onClick={this.props.remove} className="remove">&times;</a>] &nbsp;
+        <span className="notetitle">{this.props.note.title}:</span> 
         <a onDoubleClick={this.handleToggle}>{this.props.note.content}</a></li>
         {this.renderIf(this.state.editing, <NoteUpdate note={this.props.note} toggle={this.handleToggle} handleUpdateNote={this.props.handleUpdateNote} />) }
       </div>

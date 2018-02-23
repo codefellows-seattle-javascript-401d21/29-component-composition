@@ -17,10 +17,6 @@ class NoteUpdate extends React.Component {
     e.preventDefault();
     this.props.handleUpdateNote(this.state);
     this.props.toggle();
-    this.setState({
-      title: '',
-      content: '',
-    });
   }
 
   handleChange(e) {
