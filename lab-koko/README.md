@@ -1,4 +1,4 @@
-# Lab 27 - Reddit Search Engine
+# Lab 29 - Component Composition
 
 **Author**: Koko Kassa
 
