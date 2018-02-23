@@ -40,6 +40,7 @@ class NoteCreateForm extends React.Component{
     return(
       <form className='note-form' onSubmit={this.handleSubmit}>
         <input
+          className='title-input'
           type='text'
           name='title'
           placeholder='title'
