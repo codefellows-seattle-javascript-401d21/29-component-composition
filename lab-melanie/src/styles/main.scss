@@ -1,0 +1,112 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(102, 105, 107);
+$secondary-color: rgb(255, 255, 245);
+$tertiary-color: rgb(255, 211, 218);
+$button-text: rgb(252, 133, 152);
+
+* {
+  font-family: $font-stack;
+  background-color: $primary-color;
+}
+
+header {
+  margin-top: 10px;
+  background-color: $secondary-color;
+}
+
+header h4 {
+  float: left;
+  margin-left: 30px;
+  font-family: 'Times New Roman';
+  font-style: italic;
+  font-weight: bold;
+  font-size: 35px;
+  color:  $secondary-color;
+}
+
+nav li {
+  list-style: none;
+  float: right;
+  margin-top: 50px;
+  margin-right: 20px;
+  background-color: $secondary-color;
+}
+
+nav a {
+  text-decoration: none;
+  color: $secondary-color;
+  font-size: 20px;
+}
+
+.landing, .dash {
+  clear: both;
+  text-align: center;
+  border-top: $tertiary-color 1px solid;
+}
+
+h1 {
+  font-size: 50px;
+  color: $secondary-color;
+}
+
+.landing p {
+  font-size: 20px;
+  color: $tertiary-color;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  width: 40%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid $tertiary-color;
+  background-color: $secondary-color;
+  font-size: 30px;
+}
+
+input:focus {
+  border: 5px solid $button-text;
+}
+
+.note-form button {
+  margin-bottom: 30px;
+  width: 30%;
+  border-radius: 10px;
+  background-color: $secondary-color;
+  font-size: 30px;
+  color: $button-text;
+}
+
+.content {
+  height: 100px;
+  font-size: 20px;
+}
+
+.note-list {
+  border-top: $tertiary-color 1px solid;
+}
+
+.note-list h2 {
+  margin-top: 50px;
+  font-size: 30px;
+  color: $secondary-color;
+}
+
+.note-list li {
+  margin-bottom: 20px;
+  list-style: none;
+  font-size: 20px;
+  color: $secondary-color;
+}
+
+.note-item button {
+  width: 20%;
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color: $secondary-color;
+  font-size: 20px;
+  color: $button-text;
+}
