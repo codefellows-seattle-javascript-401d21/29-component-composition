@@ -46,6 +46,7 @@ class NoteCreateForm extends React.Component {
       <form className='note-form' onSubmit={this.handleSubmit}>
         <fieldset>
           <input
+            className='title'
             type='text'
             name='title'
             placeholder='Title'
@@ -62,7 +63,7 @@ class NoteCreateForm extends React.Component {
             onChange={this.handleChange}
           />
         </fieldset>
-        <button type='submit'>Add Note</button>
+        <button className='create-button' type='submit'>Add Note</button>
       </form>
     );
   }
