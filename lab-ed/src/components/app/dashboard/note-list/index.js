@@ -1,5 +1,5 @@
 import React from 'react'
-import NoteItem from './note-item/index.js'
+import NoteItem from './note-item/index'
 
 class NoteList extends React.Component {
   constructor(props) {

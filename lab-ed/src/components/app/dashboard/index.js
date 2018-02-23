@@ -1,6 +1,6 @@
 import React from 'react'
-import NoteCreateForm from './note-create-form/index.js'
-import NoteList from './note-list/index.js'
+import NoteCreateForm from './note-create-form/index'
+import NoteList from './note-list/index'
 import uuidv1 from 'uuid/v1'
 
 class Dashboard extends React.Component {
