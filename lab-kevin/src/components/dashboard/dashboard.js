@@ -11,17 +11,25 @@ class Dashboard extends React.Component{
     this.state = {
       notes: [],
     }
-  this.handleNoteUpdate = this.handleNoteUpdate.bind(this);
-  this.handleRemoveNote = this.handleRemoveNote.bind(this);
+  //this.handleNoteUpdate = this.handleNoteUpdate.bind(this);
+  //this.handleRemoveNote = this.handleRemoveNote.bind(this);
+  this.state_getter_setter = this.state_getter_setter.bind(this);
   }
 
-  handleNoteUpdate(note_state){
-    this.setState(dashState => ({notes: [...dashState.notes, note_state]}));
+  state_getter_setter(){
+    return {
+      state: this.state,
+      setState: this.setState.bind(this),
+    };
   }
 
-  handleRemoveNote(note_id){
-    this.setState(dashState => ({notes: dashState.notes.filter(note => note.id !== note_id)}))
-  }
+  // handleNoteUpdate(note_state){
+  //   this.setState(dashState => ({notes: [...dashState.notes, note_state]}));
+  // }
+
+  // handleRemoveNote(note_id){
+  //   this.setState(dashState => ({notes: dashState.notes.filter(note => note.id !== note_id)}))
+  // }
 
   render(){
     return (
@@ -30,11 +38,11 @@ class Dashboard extends React.Component{
       <Dash_nav />
       <Route path={`${this.props.match.path}/note-create`} 
         render={() => 
-        (<Note_create_form update_notes={this.handleNoteUpdate} />)} />
+        (<Note_create_form dashboard={this.state_getter_setter()} />)} />
 
       <Route path ={`${this.props.match.path}/notes`}  
         render={() => 
-        (<Note_list notes={this.state.notes} remove_note={this.handleRemoveNote} />)} />
+        (<Note_list dashboard={this.state_getter_setter()} />)} /> 
     </section>
     );
   }

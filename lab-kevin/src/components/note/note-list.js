@@ -10,15 +10,15 @@ class Note_list extends React.Component{
     this.display_notes = this.display_notes.bind(this);
   }
 
-  display_notes(notes){
-    return notes.map((note_item, i) => <Note_item key={i} note={note_item} delete_note={this.props.remove_note}/>)
+  display_notes(){
+    return this.props.dashboard.state.notes.map((note_item, i) => <Note_item key={i} note={note_item} dashboard={this.props.dashboard}/>)
   }
 
   render(){
     return (
       <section className="notes">
         <ul className="note-list">
-        {this.display_notes(this.props.notes)}
+          {this.display_notes()}
         </ul>
       </section>
     );
