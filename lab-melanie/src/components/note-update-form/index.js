@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NoteCreateForm extends React.Component {
+class NoteUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,9 +9,8 @@ class NoteCreateForm extends React.Component {
       content: '',
       title: '',
     };
-
     // ----- Bind Handlers ----- //
-    let memberFunctions = Object.getOwnPropertyNames(NoteCreateForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(NoteUpdateForm.prototype);
     for(let functionName of memberFunctions){
       if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
@@ -21,7 +20,7 @@ class NoteCreateForm extends React.Component {
   // ----- Handlers ----- //
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleAddNote(this.state);
+    this.props.update(this.state);
 
     this.setState({
       editing: false,
@@ -36,6 +35,7 @@ class NoteCreateForm extends React.Component {
 
 
     this.setState({
+      editing: true,
       completed: true,
       [name]: value,
     });
@@ -43,7 +43,7 @@ class NoteCreateForm extends React.Component {
 
   render() {
     return (
-      <form className='note-form' onSubmit={this.handleSubmit}>
+      <form className='update-form' onSubmit={this.handleSubmit}>
         <fieldset>
           <input
             type='text'
@@ -62,9 +62,10 @@ class NoteCreateForm extends React.Component {
             onChange={this.handleChange}
           />
         </fieldset>
-        <button type='submit'>Add Note</button>
+        <button type='submit'>Update Note</button>
       </form>
     );
   }
 }
-export default NoteCreateForm;
+
+export default NoteUpdateForm;

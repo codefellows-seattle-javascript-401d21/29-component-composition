@@ -20,12 +20,18 @@ class Dashboard extends React.Component {
     }
   }
   // ----- Handlers ----- //
-  handleAddNote(note){
+  handleAddNote(note) {
     note.createdOn = new Date();
     note.id = uuidv1();
 
     this.setState(previousState => {
-      return {notes :[...previousState.notes, note]};
+      return {notes: [...previousState.notes, note]};
+    });
+  }
+
+  handleUpdateNote(note) {
+    this.setState(previousState => {
+      return {notes: [...previousState.notes, note]};
     });
   }
 
@@ -41,7 +47,7 @@ class Dashboard extends React.Component {
       <div className="dash">
         <h1>Note Dashboard</h1>
         <NoteCreateForm handleAddNote={this.handleAddNote} />
-        <NoteList handleRemoveNote={this.handleRemoveNote} notes={this.state.notes}/>
+        <NoteList handleRemoveNote={this.handleRemoveNote} notes={this.state.notes} update={this.handleUpdateNote} />
       </div>
     );
   }
