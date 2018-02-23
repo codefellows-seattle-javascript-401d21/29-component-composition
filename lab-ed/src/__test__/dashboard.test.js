@@ -4,12 +4,11 @@ import Adapter from 'enzyme-adapter-react-16'
 require('jest')
 
 Enzyme.configure({adapter: new Adapter()})
-import Dashboard from '../components/dashboard/index'
+import Dashboard from '../components/app/dashboard/index'
 
 describe('Dashboard', () => {
   test('Testing initial state', () => {
     let mountedDashboard = Enzyme.mount(<Dashboard />)
-
     expect(mountedDashboard.state('notes')).toEqual([])
   })
 })
