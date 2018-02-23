@@ -2,9 +2,8 @@
 
 import React from 'react';
 import {Route} from 'react-router-dom';
-import Note_create_form from '../note-create-form/index.js';
-import Note_list from '../note-list/index.js';
-import Dash_nav from '../dash_nav/index.js';
+import {Note_create_form, Note_list} from '../note/index.js';
+import {Dash_nav} from './index.js';
 
 class Dashboard extends React.Component{
   constructor(props){

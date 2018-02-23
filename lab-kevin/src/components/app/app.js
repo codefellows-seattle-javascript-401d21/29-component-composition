@@ -2,11 +2,9 @@
 
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import Header from '../header/index.js';
-import Landing from '../landing/index.js';
-import Dashboard from '../dashboard/index.js'
-import Footer from '../footer/index.js';
-
+import {Header, Footer} from './index.js';
+import {Landing} from '../landing/index.js';
+import {Dashboard} from '../dashboard/index.js'
 
 class App extends React.Component{
   constructor(props){
