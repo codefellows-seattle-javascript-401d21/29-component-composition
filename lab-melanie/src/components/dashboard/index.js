@@ -30,8 +30,14 @@ class Dashboard extends React.Component {
   }
 
   handleUpdateNote(note) {
-    this.setState(previousState => {
-      return {notes: [...previousState.notes, note]};
+    this.state.notes.forEach(dashNote => {
+      if(dashNote.id === note.id) {
+        dashNote.title = note.title;
+        dashNote.content = note.content;
+      }
+    });
+    this.setState({
+      notes: this.state.notes,
     });
   }
 

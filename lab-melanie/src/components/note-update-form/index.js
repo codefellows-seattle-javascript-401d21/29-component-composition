@@ -4,8 +4,6 @@ class NoteUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      editing: false,
-      completed: false,
       content: '',
       title: '',
     };
@@ -20,14 +18,9 @@ class NoteUpdateForm extends React.Component {
   // ----- Handlers ----- //
   handleSubmit(event) {
     event.preventDefault();
-    this.props.update(this.state);
 
-    this.setState({
-      editing: false,
-      completed: false,
-      content: '',
-      title: '',
-    });
+    this.props.update(this.state);
+    this.handleEditing();
   }
 
   handleChange(event){
@@ -35,9 +28,20 @@ class NoteUpdateForm extends React.Component {
 
 
     this.setState({
-      editing: true,
       completed: true,
       [name]: value,
+    });
+  }
+
+  handleEditing() {
+    this.props.getOrSetState.setState({editing: false});
+  }
+
+  componentWillMount() {
+    this.setState({
+      title: this.props.note.title,
+      content: this.props.note.content,
+      id: this.props.note.id,
     });
   }
 
@@ -63,6 +67,7 @@ class NoteUpdateForm extends React.Component {
           />
         </fieldset>
         <button type='submit'>Update Note</button>
+        <button type='button' onClick={this.handleEditing}>Cancel</button>
       </form>
     );
   }
