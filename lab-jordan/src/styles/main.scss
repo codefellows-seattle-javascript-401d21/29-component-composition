@@ -1,0 +1,29 @@
+* {
+  font-family: helvetica;
+}
+
+h1 {
+  font-family: serif;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+
+  ul {
+    padding-left: 0px;
+
+    li {
+      list-style-type: none;
+      display: inline;
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
