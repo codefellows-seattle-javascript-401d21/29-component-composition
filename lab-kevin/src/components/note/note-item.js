@@ -17,7 +17,6 @@ class Note_item extends React.Component{
   }
 
   handleUpdate(e){
-    console.log('DbleClick')
     this.props.dashboard.setState(dashState => 
       ({notes: dashState.notes.map(note => {
         if (note.id === this.props.note.id) note.editing =  true;

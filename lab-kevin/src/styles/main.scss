@@ -59,12 +59,24 @@ h2 {
   }
 }
 
+.form-close {
+  float: right;
+  font-size: 1.1em;
+  background-color: $dark_text;
+  color: $header_background-color;
+  padding: 0.5em .6em;
+  border-radius: 1.5em;
+  text-transform: uppercase;
+  border: 0.2em solid $button_background_color;  
+}
+
 .note-create, .notes {
   margin: 0 auto;
   width: 90vw;
 }
 
 .create-note-form {
+  clear: right;
 
   input, textarea {
     color: $dark_text;

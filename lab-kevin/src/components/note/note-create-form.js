@@ -15,6 +15,23 @@ class Note_create_form extends React.Component{
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handle_render_close_button = this.handle_render_close_button.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
+  handle_render_close_button(){
+    if(this.state.editing){
+      return (
+        <span className="form-close" onClick={this.handleClose}>x</span>
+      )
+    }
+  }
+
+  handleClose(){
+    this.state.editing = false;
+    this.props.dashboard.setState(dashNotes => ({notes: [...dashNotes.notes, this.state]}));
+    this.setState({title: '', content:'', editing: false, completed: false, id: uuid()});
+    
   }
 
   handleChange(e){
@@ -47,6 +64,7 @@ class Note_create_form extends React.Component{
   render(){
     return(
       <section className="note-create">
+        {this.handle_render_close_button()}
         <form className="create-note-form" onSubmit={this.handleSubmit}>
           <input name="title" 
           onChange={this.handleChange}

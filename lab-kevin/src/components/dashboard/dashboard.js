@@ -11,8 +11,7 @@ class Dashboard extends React.Component{
     this.state = {
       notes: [],
     }
-  //this.handleNoteUpdate = this.handleNoteUpdate.bind(this);
-  //this.handleRemoveNote = this.handleRemoveNote.bind(this);
+
   this.state_getter_setter = this.state_getter_setter.bind(this);
   }
 
@@ -22,14 +21,6 @@ class Dashboard extends React.Component{
       setState: this.setState.bind(this),
     };
   }
-
-  // handleNoteUpdate(note_state){
-  //   this.setState(dashState => ({notes: [...dashState.notes, note_state]}));
-  // }
-
-  // handleRemoveNote(note_id){
-  //   this.setState(dashState => ({notes: dashState.notes.filter(note => note.id !== note_id)}))
-  // }
 
   render(){
     return (
