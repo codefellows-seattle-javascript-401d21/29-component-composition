@@ -26,15 +26,23 @@ class Note_create_form extends React.Component{
     if(!this.state.title && !this.state.content) return;
     this.setState({completed: true});
     if(!this.state.title || !this.state.content) this.setState({editing: true, completed: false});
-    let dashNotes = this.props.dashboard.state.notes
-    if (this.state.editing) {
-      this.state.editing = false;
-      dashNotes = dashNotes.filter(note => note.id !== this.state.id)
-    }
-    this.props.dashboard.setState({notes: [...dashNotes, this.state]});
-    //this.props.dashboard.setState(dashState => ({notes: [...dashState.notes, this.state]}));
+    let formState = this.state;
+    this.setState({title: '', content:'', editing: false, completed: false, id: uuid()});
+    console.log('formState', formState)
+    let dashNotes = this.props.dashboard.state.notes;
+    if (formState.editing){ 
+      dashNotes = dashNotes.map(note => {
+        if (note.id === formState.id){
+          note.title = formState.title;
+          note.content = formState.content;
+          note.editing = false;
+        }
+        return note;
+       });
+       return  this.props.dashboard.setState({notes: dashNotes});
+      }
 
-    this.setState({title: '', content:'', editing: false, completed: false, id: uuid()})
+      this.props.dashboard.setState({notes: [...dashNotes, formState]})
   }
 
   render(){
