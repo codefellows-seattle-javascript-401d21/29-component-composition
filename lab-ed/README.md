@@ -1,12 +1,12 @@
 # Lab 29: component composition
 
-##This is a note taking app.
+## This is a note taking app.
 
 It uses webpack to compile JS and sass into a bundle and uses babel to transpile JSX and ES6 to ES5 javascript. It also uses react and an event listeners to render react components.
 
 To install the app clone the git repository
 
-Dependencies:
+__Dependencies:__
 
   babel-core
 
@@ -50,7 +50,7 @@ Dependencies:
 
 To install dependencies: NPM i
 
-Dev Dependencies:
+__Dev Dependencies:__
 
   enzyme
 
