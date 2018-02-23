@@ -1,4 +1,4 @@
-# Lab 28: routing and testing
+# Lab 29: component composition
 
 This is a note taking app. It uses webpack to compile JS and sass into a bundle and uses babel to transpile JSX and ES6 to ES5 javascript. It also uses react and an event listeners to render react components.
 
