@@ -1,6 +1,7 @@
 ## To Do List
 Takes an user input for title and content.
 Displays a list of to do.
+You can edit/delete them.
 
 #### Usage
 1. Clone this repo in your desired location.

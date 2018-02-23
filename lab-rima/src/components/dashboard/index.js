@@ -22,18 +22,20 @@ class Dashboard extends React.Component{
 
   handleAddNote(note){
     note.id = uuidv1();
-    note.completed = true;
-    note.editing = false;
     this.setState(previousState => {
       return {notes: [...previousState.notes, note]};
     });
   }
 
   handleUpdateNote(note){
-    note.completed = true;
-    note.editing = false;
     this.setState(previousState => {
-      return {notes: [...previousState.notes, note]};
+      for(let i = 0; i < previousState.notes.length; i++){
+        if(previousState.notes[i].id === note.id){
+          console.log(note);
+          previousState.notes[i] = note;
+        }
+      }
+      return {notes: [...previousState.notes]}
     });
   }
 
