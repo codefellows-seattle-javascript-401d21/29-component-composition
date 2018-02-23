@@ -1,0 +1,183 @@
+$header_background-color: #83ddff;
+$dark_text: #05394A;
+$nav_text_color: #555;
+$footer_background_color: #9BBFCC;
+$footer_color: #344045;
+$input_border: 1px solid $dark_text;
+$input_border_radius: .1em;
+$button_background_color: #C2EEFF;
+$button_hover_color:  #9BBFCC;
+$note_background_color: #f0f8ff;
+
+header {
+  width: 100vw;
+  height: 6.5em;
+  background-color: $header_background-color;
+
+  h1 {
+    color: $dark_text;
+    font-size: 2.5em;
+    padding-top: .65em;
+    margin-left: 1em;
+  }
+}
+
+h2 {
+  color: $dark_text;
+  font-size: 2em;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.nav-list {
+  margin-left: 2em;
+}
+
+.nav-list-item {
+  display: inline-block;
+  padding: .65em 1em;
+
+  a {
+    color: $nav_text_color;
+    text-decoration: none;
+  }
+}
+
+.dash-nav-list {
+  margin: .5em auto;
+  text-align: center;
+}
+
+.dash-nav-list-item {
+  display: inline-block;
+  padding: .5em 1em;
+
+  a {
+    color: $nav_text_color;
+    text-decoration: none;
+  }
+}
+
+.note-create, .notes {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.create-note-form {
+
+  input, textarea {
+    color: $dark_text;
+    display: block;
+    width: 80%;
+    margin: 0.5em auto;
+    font-size: 1.5em;
+    text-indent: .25em;
+    border: $input_border;
+    border-radius: $input_border_radius;
+    
+  }
+
+  input {
+    height: 1.5em;
+  }
+
+  textarea {
+    height: 8em;
+  }
+
+  button {
+    background-color: $button_background_color;
+    padding: .25em 1.5em;
+    font-size: 1.25em;
+    outline: none;
+    display: block;
+    margin-left: 9vw;
+    border: none;
+    border-radius: $input_border_radius;
+    
+      &:hover{
+        background-color:$button_hover_color;
+      }
+
+      &:active {
+        color: $button_background_color;
+      }
+  }
+
+}
+
+.notes {
+  overflow-y: auto;
+  margin-bottom: 10em;
+}
+
+.note-list {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.note-list-item {
+  width: 80%;
+  margin: 1em auto;
+  height: 19em;
+  border-radius: $input_border_radius;
+  background-color: $note_background_color;
+
+  h3, p {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1em;
+  }
+
+  h3 {
+    font-size: 1.75em;
+    color: $dark_text
+  }
+
+  p {
+    padding: 1em;
+    background-color: #fafcff;
+    font-size: 1.25em;
+    height: 6em;
+    border-radius: .2em;
+    color: #dc0303;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+
+  button {
+    background-color: $button_background_color;
+    padding: .25em 1.25em;
+    font-size: 1.25em;
+    outline: none;
+    display: block;
+    float: right;
+    margin-right: 3em;
+    margin-top: .6em;
+    border: none;
+    border-radius: $input_border_radius;
+    
+      &:hover{
+        background-color:$button_hover_color;
+      }
+
+      &:active {
+        color: $button_background_color;
+      }
+  }
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  height: 3em;
+  bottom: 0;
+  text-align: center;
+  background-color: $header_background-color;
+  
+  p {
+    color: $footer_color;
+    font-size: 1.25em;
+    margin: .75em auto;
+  }
+}
