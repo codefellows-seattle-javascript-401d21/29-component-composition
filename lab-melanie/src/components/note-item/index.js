@@ -36,6 +36,7 @@ class NoteItem extends React.Component{
             onDoubleClick={this.handleChangeEditing}
           >{this.props.notes.title}: {this.props.notes.content}</span>
           <button
+            className='delete-button'
             type="button"
             value={this.props.notes.id}
             onClick={this.props.handleRemoveNote}
