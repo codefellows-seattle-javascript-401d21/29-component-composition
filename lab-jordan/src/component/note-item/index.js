@@ -9,18 +9,18 @@ class NoteItem extends React.Component {
     this.state = {
       title: this.props.note.title ? this.props.note.title : '',
       content: this.props.note.content ? this.props.note.content : '',
-      editing: false,
+      updating: false,
     }
   }
 
   render() {
     return(
-        <div onDoubleClick={() => this.setState({editing: true})}>
-          {renderIf(this.state.editing,
-            <Modal close={() => this.setState({editing: !this.state.editing})}>
+        <div onDoubleClick={() => this.setState({updating: true})}>
+          {renderIf(this.state.updating,
+            <Modal close={() => this.setState({updating: !this.state.updating})}>
               <NoteUpdateForm title={this.state.title}
                 content={this.state.content}
-                setState={(note) => this.setState({title: note.title, content: note.content})}/>
+                setState={(childState) => this.setState({title: childState.title, content: childState.content})}/>
             </Modal>
           )}
           <h3>{this.state.title}</h3>

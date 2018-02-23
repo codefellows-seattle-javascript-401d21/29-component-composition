@@ -7,24 +7,16 @@ class NoteUpdateForm extends React.Component{
       content: this.props.content ? this.props.content : '',
       title: this.props.title ? this.props.title : ''
     };
-    //----------------------------------------------------
-    // Binding Handlers
-    //----------------------------------------------------
     let memberFunctions = Object.getOwnPropertyNames(NoteUpdateForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
       }
     }
-    //----------------------------------------------------
   }
-  //------------------------------------------------------
-  // Member Function
-  //------------------------------------------------------
   handleSubmit(event){
     event.preventDefault();
-    // this.props.handleAddNote(this.state);
-    // vinicio - clearing the form
+
     this.props.setState({
       content: this.state.content,
       title: this.state.title
@@ -39,9 +31,6 @@ class NoteUpdateForm extends React.Component{
     })
   }
 
-  //------------------------------------------------------
-  // Lifecycle hooks
-  //------------------------------------------------------
   render(){
     return(
       <form className='note-create-form' onSubmit={this.handleSubmit}>
