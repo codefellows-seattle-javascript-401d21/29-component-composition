@@ -27,11 +27,11 @@ describe('NoteCreateForm', () => {
     });
     expect(shallowForm.state('title')).toEqual('test');
   });
-  test('Testing initial state', () => {
-    let mountedDB = Enzyme.mount(<Dashboard />);
-    let shallowForm2 = Enzyme.shallow(<NoteCreateForm />);
+  // test('Testing initial state', () => {
+  //   let mountedDB = Enzyme.mount(<Dashboard />);
+  //   let shallowForm2 = Enzyme.shallow(<NoteCreateForm />);
 
-    shallowForm2.find('.note-form button').simulate('click');
-    expect(mountedDB.state('notes').length).toEqual(1);
-  });
+  //   shallowForm2.find('.note-form button').simulate('click');
+  //   expect(mountedDB.state('notes').length).toEqual(1);
+  // });
 });
