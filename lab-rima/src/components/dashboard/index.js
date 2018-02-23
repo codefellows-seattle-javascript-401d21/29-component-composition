@@ -10,7 +10,7 @@ class Dashboard extends React.Component{
 
     this.state = {
       notes: [],
-    }
+    };
 
     let memberFunctions = Object.getOwnPropertyNames(Dashboard.prototype);
     for(let functionName of memberFunctions){
@@ -34,7 +34,7 @@ class Dashboard extends React.Component{
           previousState.notes[i] = note;
         }
       }
-      return {notes: [...previousState.notes]}
+      return {notes: [...previousState.notes]};
     });
   }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from '../modal/index';
 import NoteUpdateForm from '../note-update-form/index';
 import { renderIf } from '../../lib/utils';
 
@@ -11,7 +10,7 @@ class NoteItem extends React.Component{
     this.state = {
       note: this.props.note,
       editing: false,
-    }
+    };
 
     let memberFunctions = Object.getOwnPropertyNames(NoteItem.prototype);
     for(let functionName of memberFunctions){
@@ -24,8 +23,8 @@ class NoteItem extends React.Component{
   handleGetSetState() {
     return {
       state: this.state,
-      setState: this.setState.bind(this)
-    }
+      setState: this.setState.bind(this),
+    };
   }
 
   handleClick(event) {
