@@ -35,10 +35,6 @@ class Dashboard extends React.Component{
    this.setState({notes: this.state.notes.filter(note => note.id !== id)});
   }
 
-  // handleUpdateNote(event){
-  //   let id = event.target.id;
-  //  }
-
   //------------------------------------------------------
   // Hooks
   //------------------------------------------------------
