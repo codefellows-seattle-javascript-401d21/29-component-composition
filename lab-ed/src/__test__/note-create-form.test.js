@@ -6,7 +6,7 @@ require('jest')
 Enzyme.configure({adapter: new Adapter()})
 import NoteCreateForm from '../components/app/dashboard/note-create-form/index'
 
-describe('Note Create From', () => {
+describe('Note create form', () => {
   test('Testing initial state', () => {
     let mountedNoteCreateForm = Enzyme.mount(<NoteCreateForm />)
     expect(mountedNoteCreateForm.state('title')).toEqual('')
