@@ -1,10 +1,12 @@
 import React from 'react';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
 require('jest');
 
 Enzyme.configure({adapter: new Adapter()});
 import NoteCreateForm from '../components/note-create-form/index';
+import Dashboard from '../components/dashboard/index';
 
 
 describe('NoteCreateForm', () => {
@@ -26,15 +28,10 @@ describe('NoteCreateForm', () => {
     expect(shallowForm.state('title')).toEqual('test');
   });
   test('Testing initial state', () => {
-
+    let mountedDB = Enzyme.mount(<Dashboard />);
     let shallowForm2 = Enzyme.shallow(<NoteCreateForm />);
 
-    shallowForm2.find('.note-form').simulate('submit', {
-      target: {
-        name: 'content',
-        value: 'test content',
-      },
-    });
-    expect(shallowForm2.state('content')).toEqual('test content');
+    shallowForm2.find('.note-form button').simulate('click');
+    expect(mountedDB.state('notes').length).toEqual(1);
   });
 });
