@@ -1,0 +1,112 @@
+/******************************************************************************/
+/*                     Main Styles                                            */
+$primarycolor: rgba(0, 0, 0, 0.7);
+$secondarycolor: #111;
+$whitetextcolor: rgba(255, 255, 255, 0.9);
+
+body {
+  width: 100%;
+
+  .application {
+    margin: auto;
+
+    .section-title {
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: Helvetica, sans-serif;
+    }
+
+    .logo {
+      font-family: 'Satisfy', cursive;
+    }
+
+
+    button:hover {
+      background-color: $secondarycolor;
+    }
+
+    button {
+      border-radius: 5px;
+      background-color: $primarycolor;
+      border: none;
+      color: $whitetextcolor;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-family: 'Satisfy', cursive;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    header ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: $primarycolor;
+
+      .navlink {
+        display: block;
+        color: $whitetextcolor;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li .navlink:hover {
+        background-color: $secondarycolor;
+      }
+
+      .navlink-left {
+        float: left;
+      }
+
+      .navlink-right {
+        font-family: Helvetica, sans-serif;
+        font-size: 20px;
+        float: right;
+      }
+    }
+
+    .notes-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 10px;
+        border: 2px solid $primarycolor;
+        border-radius: 5px;
+        padding: 10px;
+
+        h3 {
+          margin-top: 0;
+        }
+      }
+    }
+
+    form {
+      text-align: center;
+
+      input {
+        border-radius: 5px;
+        margin: 8px 3px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: none;
+        background-color: #959292;
+        color: $whitetextcolor;
+      }
+    }
+  }
+}
