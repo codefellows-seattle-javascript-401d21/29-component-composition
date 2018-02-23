@@ -13,6 +13,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HTMLPlugin(),
+  new ExtractTextPlugin('bundle-[hash].css'),
 ];
 
 webpackConfig.module = {
@@ -21,6 +22,10 @@ webpackConfig.module = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
+    },
+    {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
     },
   ],
 };

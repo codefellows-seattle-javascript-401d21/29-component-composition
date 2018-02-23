@@ -12,4 +12,15 @@ describe('NoteForm', () => {
     expect(mountedNoteForm.state('title')).toEqual('');
     expect(mountedNoteForm.state('content')).toEqual('');
   });
+
+  it('should change values in the note', () => {
+    let mountedNoteForm = Enzyme.shallow(<NoteForm />);
+    mountedNoteForm.find('.title').simulate('change', {
+      target: {
+        name: 'title',
+        value: 'this is the title',
+      },
+    });
+    expect(mountedNoteForm.state('title')).toEqual('this is the title');
+  });
 });
