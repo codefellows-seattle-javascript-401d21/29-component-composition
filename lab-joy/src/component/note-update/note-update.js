@@ -3,8 +3,8 @@ import React from 'react';
 class NoteUpdate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { note: this.props.note };
-
+    this.state = this.props.note;
+      
     let memberFunctions = Object.getOwnPropertyNames(NoteUpdate.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
@@ -16,6 +16,11 @@ class NoteUpdate extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleUpdateNote(this.state);
+    this.props.toggle();
+    this.setState({
+      title: '',
+      content: '',
+    });
   }
 
   handleChange(e) {
@@ -44,6 +49,7 @@ class NoteUpdate extends React.Component {
           onChange={this.handleChange}
         />
         <button type='submit'> Update Note </button>
+        <button onClick={this.props.toggle}>Cancel</button>
       </form>
     );
   }

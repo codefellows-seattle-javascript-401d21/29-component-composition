@@ -19,9 +19,9 @@ class NoteItem extends React.Component {
   }
 
   handleToggle() {
-    this.setState(() => {
-      return this.state.note.editing = !this.state.note.editing;
-    });
+    this.setState(prevState => ({
+      editing: !prevState.editing,
+    }));
   }
 
   render() {
@@ -29,7 +29,7 @@ class NoteItem extends React.Component {
       <div>
         <li>[<a id={this.props.note.id} onClick={this.props.remove}>&times;</a>] {this.props.note.title}: 
         <a onDoubleClick={this.handleToggle}>{this.props.note.content}</a></li>
-        {this.renderIf(this.state.note.editing, <NoteUpdate note={this.props.note} />) }
+        {this.renderIf(this.state.editing, <NoteUpdate note={this.props.note} toggle={this.handleToggle} handleUpdateNote={this.props.handleUpdateNote} />) }
       </div>
     );
 
