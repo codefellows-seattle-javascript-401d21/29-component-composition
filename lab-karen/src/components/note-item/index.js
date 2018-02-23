@@ -11,8 +11,8 @@ class NoteItem extends React.Component {
   render() {
     return (
       <li className='note-item'>
-        <h3>Title:{this.props.note.title}</h3>
-        <h3>Contents:{this.props.note.content}</h3>
+        <h4>Title:{this.props.note.title}</h4>
+        <h4>Contents:{this.props.note.content}</h4>
 
         <button className='delete'
           type="button"

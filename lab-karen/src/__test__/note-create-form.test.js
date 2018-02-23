@@ -4,12 +4,12 @@ import Adapter from 'enzyme-adapter-react-16';
 require('jest');
 
 Enzyme.configure({adapter: new Adapter()});
-import Dashboard from '../components/dashboard/index';
+import NoteCreateForm from '../components/note-create-form/index';
 
-describe('Dashboard', () => {
+describe('NoteCreateForm', () => {
   test('Testing initial state', () => {
-    let mountedDashboard = Enzyme.mount(<Dashboard />);
+    let mountedNote = Enzyme.mount(<NoteCreateForm />);
 
-    expect(mountedDashboard.state('notes')).toEqual([]);
+    expect(mountedNote.state('content')).toEqual('');
   });
 });
