@@ -28,7 +28,6 @@ class Note_create_form extends React.Component{
     if(!this.state.title || !this.state.content) this.setState({editing: true, completed: false});
     let formState = this.state;
     this.setState({title: '', content:'', editing: false, completed: false, id: uuid()});
-    console.log('formState', formState)
     let dashNotes = this.props.dashboard.state.notes;
     if (formState.editing){ 
       dashNotes = dashNotes.map(note => {
