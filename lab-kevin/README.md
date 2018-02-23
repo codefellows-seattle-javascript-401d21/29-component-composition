@@ -1,6 +1,6 @@
-># Lab 26: Cowsay
+># Lab 29 Component Composition
 
-Using webpack and react, create a simple html page that displays the value of cowsay generated with a random phrase.  The user has the option of choosing the variant of cowsay fro a drop down.
+Create a simple react application that allows the creation and deletions notes.  Enable a note view and display an edit view upon double clicking teh content view.
 
 >## Install
 

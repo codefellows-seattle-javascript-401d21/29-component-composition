@@ -6,7 +6,7 @@ import uuid from 'uuid/v1';
 class Note_create_form extends React.Component{
   constructor(props){
     super(props);
-    this.state = {
+    this.state = this.props.note || {
       id: uuid(),
       editing: false,
       completed: false,
@@ -26,7 +26,14 @@ class Note_create_form extends React.Component{
     if(!this.state.title && !this.state.content) return;
     this.setState({completed: true});
     if(!this.state.title || !this.state.content) this.setState({editing: true, completed: false});
-    this.props.update_notes(this.state)
+    let dashNotes = this.props.dashboard.state.notes
+    if (this.state.editing) {
+      this.state.editing = false;
+      dashNotes = dashNotes.filter(note => note.id !== this.state.id)
+    }
+    this.props.dashboard.setState({notes: [...dashNotes, this.state]});
+    //this.props.dashboard.setState(dashState => ({notes: [...dashState.notes, this.state]}));
+
     this.setState({title: '', content:'', editing: false, completed: false, id: uuid()})
   }
 

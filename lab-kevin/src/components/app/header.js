@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import Navbar from '../navbar/index.js';
+import {Navbar} from './index.js';
 
 class Header extends React.Component{
   constructor(props){

@@ -8,6 +8,7 @@ $input_border_radius: .1em;
 $button_background_color: #C2EEFF;
 $button_hover_color:  #9BBFCC;
 $note_background_color: #f0f8ff;
+$modal_background_color: rgba(128,128,128,.3);
 
 header {
   width: 100vw;
@@ -166,6 +167,25 @@ h2 {
       }
   }
 }
+
+/*** model ***/
+.note-update-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $modal_background_color;
+
+  .note-create {
+    position: absolute;
+    top: 30vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
 
 footer {
   position: fixed;
