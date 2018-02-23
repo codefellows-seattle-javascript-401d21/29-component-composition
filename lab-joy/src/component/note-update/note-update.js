@@ -3,8 +3,8 @@ import React from 'react';
 class NoteUpdate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { note: this.props.note };
-
+    this.state = this.props.note;
+      
     let memberFunctions = Object.getOwnPropertyNames(NoteUpdate.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
@@ -16,6 +16,7 @@ class NoteUpdate extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleUpdateNote(this.state);
+    this.props.toggle();
   }
 
   handleChange(e) {
@@ -29,7 +30,8 @@ class NoteUpdate extends React.Component {
   render() {
     return (
       <form className='note-form' onSubmit={this.handleSubmit}>
-        <input
+        <input 
+          className='title' 
           type='text'
           name='title'
           placeholder='title'
@@ -37,6 +39,7 @@ class NoteUpdate extends React.Component {
           onChange={this.handleChange}
         />
         <input
+          className='content' 
           type='textarea'
           name='content'
           placeholder='content'
@@ -44,6 +47,7 @@ class NoteUpdate extends React.Component {
           onChange={this.handleChange}
         />
         <button type='submit'> Update Note </button>
+        <button onClick={this.props.toggle}>Cancel</button>
       </form>
     );
   }

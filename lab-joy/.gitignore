@@ -4,6 +4,7 @@ db
 temp
 build
 angular
+src/__test__note-item.test.js
 
 data/note
 

@@ -6,7 +6,7 @@ import Landing from '../landing/landing';
 class App extends React.Component {
   render() {
     return (
-      <div className='app'>
+      <div className='app' id="wrapper">
         <BrowserRouter>
           <div>
             <Route exact path='/' component={Landing} />

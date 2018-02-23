@@ -29,6 +29,13 @@ class Dashboard extends React.Component {
     });
   }
 
+  handleUpdateNote(update) {
+    let updatedNotes = this.state.notes.map(note => note.id === update.id ? update : note);
+    this.setState(() => ({ 
+      notes: updatedNotes, 
+    }));
+  }
+
   handleRemoveNote(e) {
     this.setState({ notes: this.state.notes.filter(note => note.id !== e.target.id )});
   }
@@ -36,9 +43,9 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <h1>Dashboard</h1>
+        <h1>To Do Notes: Dashboard</h1>
         <NoteForm handleAddNote={this.handleAddNote} />
-        <NoteList notes={this.state.notes} remove={this.handleRemoveNote} />
+        <NoteList notes={this.state.notes} remove={this.handleRemoveNote} handleUpdateNote={this.handleUpdateNote} />
       </div>
     );
 

@@ -6,7 +6,7 @@ class Landing extends React.Component {
       <div>
         <h1>Notes App: To Do</h1>
         <p>This notes application allows you to add and delete To Do tasks.</p>
-        <p><a href="/dashboard">To Dashoard</a></p>
+        <p><a href="/dashboard">To Dashboard</a></p>
       </div>
     );  
   }
