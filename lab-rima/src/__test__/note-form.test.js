@@ -12,7 +12,7 @@ import Dashboard from '../components/dashboard/index';
 describe('NoteForm component', () => {
 
   test('initial state', () => {
-    let mountedNoteForm = Enzyme.mount(<NoteForm />);
+    let mountedNoteForm = mount(<NoteForm />);
 
     expect(mountedNoteForm.state('title')).toEqual('');
     expect(mountedNoteForm.state('content')).toEqual('');
