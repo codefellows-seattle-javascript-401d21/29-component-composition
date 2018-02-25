@@ -37,8 +37,6 @@ describe('Note_create_form: Test ', function () {
     describe('Note_create_form: change test', () => {
 
     it('Should have a state with a title and content', () => {
-
-      console.log('after change note_create_form', this.note_create_form.state())
       expect(this.note_create_form.state('title')).toEqual('Hello');
       expect(this.note_create_form.state('content')).toEqual('How are you today?');
     });
@@ -51,13 +49,11 @@ describe('Note_create_form: Test ', function () {
     });
 
     it('Should have a note create state with empty title and content', () => {
-      console.log('after submit note_create_form', this.note_create_form.state())
       expect(this.note_create_form.state('title')).toEqual('');
       expect(this.note_create_form.state('content')).toEqual('');
     });
 
     it('Should have a note in dashboard in an array with content and title', () => {
-      console.log('dashboard', this.dashboard.state('notes'));
       expect(this.dashboard.state('notes')[0].title).toEqual('Hello');
       expect(this.dashboard.state('notes')[0].content).toEqual('How are you today?');
     });
