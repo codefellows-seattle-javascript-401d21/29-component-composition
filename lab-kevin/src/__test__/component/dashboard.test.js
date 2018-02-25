@@ -7,7 +7,7 @@ import Adapter from 'enzyme-adapter-react-16'
 
 Enzyme.configure({adapter: new Adapter()});
 
-import Dashboard from '../../components/dashboard/index.js';
+import {Dashboard} from '../../components/dashboard/index.js';
 
 describe('Dashboard: Test initial State', () => {
   it('Should have an initial state with an empty notes array', () => {
