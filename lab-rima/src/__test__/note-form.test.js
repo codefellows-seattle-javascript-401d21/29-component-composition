@@ -31,7 +31,7 @@ describe('NoteForm component', () => {
     expect(form.state().content).toEqual('Test content');
   });
 
-  test('handleSubmit: should change state when input value c', () => {
+  test('handleSubmit: should save a new note in notes in dashboard state when save button is clicked', () => {
     const dashboard = mount(<Dashboard />);
     const form = mount(<NoteForm handleAddNote={dashboard.instance().handleAddNote}/>);
     const inputTitle = form.find('.title');
