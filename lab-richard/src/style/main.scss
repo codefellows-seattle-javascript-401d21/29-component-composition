@@ -1,0 +1,39 @@
+$font-stack: Cambria;
+$primary-color: rgb(134, 0, 0);
+$secondary-color: rgba(70, 9, 9, 0.445);
+
+body {
+  font: 100% $font-stack;
+}
+
+h1 {
+  text-align: center;
+  color: $primary-color;
+  font-size: 50px;
+}
+
+div {
+  text-align: center;
+  font-size: 18px;
+  color: $secondary-color;
+}
+
+li {
+  display: block;
+  text-align: center;
+}
+
+input {
+    padding: 15px;
+}
+
+button {
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 15px;
+  border: none;
+  margin: 10px;
+  background-color: black;
+  color: white;
+}
