@@ -24,6 +24,8 @@ Navigate to Dashboard...
 
 Type in title field the title of your note. Type in content field the contents of your note. Click submit and it will save your note below. When you are tired of looking at your note or it no longer serves a purpose, click Remove Note and watch it disappear forever.
 
+New Feature: Double click a note to edit title and/or content.
+
 <hr>
 
 <h2>Lab Assignment</h2>
