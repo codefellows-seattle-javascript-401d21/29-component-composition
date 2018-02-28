@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #ffeff0;
+  color: #000;
+  font-family: Raleway, sans-serif;
+  line-height: 1.3em;
+  word-spacing: 0.1em;
+  letter-spacing: 0.07em;
+  height: 100%;
+}
+
+#wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 4em 0 0 0;
+  text-align: center;
+}
+
+a {
+  color: #888;
+  text-decoration: none;
+  cursor: hand;
+  font-weight: 900;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: 1.8em;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin-bottom: 1em;
+  line-height: 1.3em;
+}
+
+input, button {
+  margin-top: 1.5em;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  padding: 0.6em;
+  font-weight: 100;
+  outline: none;
+  padding: 13px 35px;
+  font-weight: 500;
+  color: #444;
+  background: #fff;
+  border: solid 1px #1c4f25;
+  border-radius: 0.5em;
+  margin: 0.5em 0.2em 1em 0.2em;
+}
+
+li {
+  margin: 0.5em 0;
+  font-size: 1.3em;
+  letter-spacing: 0.2em;
+  word-spacing: 0.2em;
+  padding: 0.4em 0.3em; 
+  list-style: none;
+  background-color: #ffe3e5;
+  text-align: left;
+}
+
+button:active {
+  color: #fff;
+  background: #333;
+}
+
+button:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}
+
+pre {
+  background: #000;
+  color: #ffc9db;
+  padding: 1em;
+  border: solid 1px #fff;
+  border-radius: 0.5em;
+}
+
+.remove {
+    font-size: 1.5em;
+}
+
+.notetitle {
+    font-weight: 900;
+    font-size: 1.2em;
+    margin-right: 0.5em;
+}
