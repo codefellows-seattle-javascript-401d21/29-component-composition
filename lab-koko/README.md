@@ -3,7 +3,7 @@
 **Author**: Koko Kassa
 
 ## Overview
-Creating a search engine for Reddit using webpack and react
+Creating NoteApp using webpack and react
 
 #### Configuration
 * `package.json`
