@@ -1,6 +1,6 @@
 My Tests Pass!
 
-i tested on mount for the initial state values using enzyme.
+I tested on mount for the initial state values using enzyme.
 
 
 Feature Tasks
@@ -29,6 +29,8 @@ App
      NoteItem
        NoteUpdateForm
 Test
+
+
 Test NoteCreateForm
 Test your onChange handler
 Test your onSubmit handler
@@ -36,5 +38,3 @@ Test NoteItem
 Test the NoteItem's ability to remove a note from the App's state
 Test NoteUpdateForm
 Test the NoteUpdatesForm's ability to update a note in the App's state
-Documentation
-Write a description of the project in your README.md
