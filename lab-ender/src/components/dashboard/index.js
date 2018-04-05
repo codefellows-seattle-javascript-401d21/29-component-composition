@@ -35,8 +35,7 @@ class Dashboard extends React.Component{
     this.setState({notes: notes});
   }
 
-  handleUpdateNote(note){
-    console.log(note);
+  handleUpdateNote(note) {
     let notes = this.state.notes;
     notes.forEach(i => {
       if (i.id === note.id) {
@@ -63,7 +62,8 @@ class Dashboard extends React.Component{
           handleAddNote={this.handleAddNote}/>
         <NoteList
           notes={this.state.notes}
-          handleRemoveNote={this.handleRemoveNote}/>
+          handleRemoveNote={this.handleRemoveNote}
+          handleUpdateNote={this.handleUpdateNote}/>
       </div>
     );
 

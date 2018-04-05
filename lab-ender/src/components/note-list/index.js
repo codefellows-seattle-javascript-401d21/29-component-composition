@@ -9,6 +9,7 @@ class NoteList extends React.Component {
         {
           this.props.notes.map((note, index) =>
             <NoteItem
+              note={note}
               title={note.title}
               content={note.content}
               key={index}

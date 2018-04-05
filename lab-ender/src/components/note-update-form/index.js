@@ -27,9 +27,9 @@ class NoteUpdateForm extends React.Component {
 
   componentWillMount() {
     this.setState({
-      title: this.props.title,
-      content: this.props.content,
-      id: this.props.id,
+      title: this.props.note.title,
+      content: this.props.note.content,
+      id: this.props.note.id,
       editing: this.props.editing,
     });
   }

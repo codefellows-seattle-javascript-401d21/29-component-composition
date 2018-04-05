@@ -29,7 +29,6 @@ class NoteItem extends React.Component{
     };
   }
 
-
   render() {
     return(
       <div onDoubleClick={this.handleChangeState}>
