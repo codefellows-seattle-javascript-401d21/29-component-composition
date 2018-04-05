@@ -5,13 +5,23 @@ require('jest');
 
 Enzyme.configure({adapter: new Adapter()});
 import NoteCreateForm from '../components/note-create-form/index';
-
+import Dashboard from '../components/dashboard/index';
 
 describe('NoteCreateForm', () => {
-  test('Testing initial state', () => {
+  it('properly sets the initial state', () => {
     let mountedForm = Enzyme.mount(<NoteCreateForm />);
-
     expect(mountedForm.state('title')).toEqual('');
     expect(mountedForm.state('content')).toEqual('');
+  });
+
+  it('correctly handles a note creation submission', () => {
+    let shallowForm = Enzyme.shallow(<NoteCreateForm />);
+    shallowForm.find('.title-input').simulate('change', {
+      target: {
+        name: 'title',
+        value: 'test',
+      },
+    });
+    expect(shallowForm.state('title')).toEqual('test');
   });
 });

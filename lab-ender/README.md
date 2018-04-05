@@ -14,3 +14,5 @@ To access the dashboard, enter the following in the browser's address bar: `http
 Fill in the `title` and `content` fields and press `create note`
 #### Deleting a note:
 Press `delete` on the note you wish to delete.
+#### Updating a note:
+Double click on the note you wish to update. Edit the title or content. Click the `update note` button.
